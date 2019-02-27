@@ -1,0 +1,15 @@
+{
+  "short_name": "pwa-test",
+  "name": "pwa-test",
+  "icons": [
+    {
+      "src": "images/icon/192x.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "background_color": "#FDFDFD",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait"
+}

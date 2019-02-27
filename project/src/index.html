@@ -28,6 +28,7 @@ limitations under the License.
 
   <!-- Request styles -->
   <link rel="stylesheet" href="/style/main.css" />
+  <link rel="manifest" href="manifest.json">
 
 </head>
 
@@ -79,6 +80,9 @@ limitations under the License.
           <li class="list-item"><a href="pages/post-missing.html" class="post-link">Non-existent Post 4</a></li>
         </ul>
       </div>
+        <h3>Your location</h3>
+      <div id="mapholder">
+      </div>
     </section>
   </article>
 
@@ -90,7 +94,6 @@ limitations under the License.
   </footer>
 
   <script src="/js/animation.js"></script>
-
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
@@ -103,7 +106,8 @@ limitations under the License.
           });
       });
     }
-  </script>
 
+  </script>
+  <script src="/js/geolocation.js"></script>
 </body>
 </html>
