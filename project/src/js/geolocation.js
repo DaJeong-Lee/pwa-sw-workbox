@@ -10,22 +10,20 @@ function showPosition(position) {
 }
 
 function locationError(error) {
-	console.log('locationError')
-  console.log(error)
+    console.log(error)
     switch(error.code) {
-        case error.PERMISSION_DENIED:
+        case 1:
             return "User denied the request for Geolocation."
             break;
-        case error.POSITION_UNAVAILABLE:
+        case 2:
             return "Location information is unavailable."
             break;
-        case error.TIMEOUT:
+        case 3:
             return "The request to get user location timed out."
             break;
-        case error.UNKNOWN_ERROR:
-            return "An unknown error occurred."
-            break;
     }
+
+    return "An unknown error occurred."
 }
 
 function showInMap(pos) {
@@ -49,10 +47,11 @@ function getLocation() {
 			},
 			function errorCallback(error) {
 				//do error handling
-				locationError(error)
+				msg = locationError(error)
+				alert(msg)
 			},
 			{
-				maximumAge: Infinity,
+				maximumAge: 0,
 				timeout: 5000,
 				enableHighAccuracy: true
 			}
